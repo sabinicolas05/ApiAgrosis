@@ -1,3 +1,4 @@
+
 import express from 'express';
 import { ListarFinanzasPago, RegistrarFinanzasPago } from '../controllers/Finanzas_pagoController.js';
 import {ActualizarFinanzasPago} from '../controllers/Finanzas_pagoController.js';
