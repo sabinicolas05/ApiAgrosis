@@ -1,3 +1,4 @@
+
 import express from 'express';
 import { ListarFinanzasProduccion, RegistrarFinanzasProduccion } from '../controllers/Finanzas_produccionController.js';
 import {ActualizarFinanzasProduccion} from '../controllers/Finanzas_produccionController.js';
