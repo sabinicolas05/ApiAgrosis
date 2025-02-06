@@ -14,6 +14,12 @@ import  ActualizarUsers  from './src/routes/Users_.route.js';
 import  RegistrarUsers  from './src/routes/Users_.route.js';
 import  BuscarUsers from './src/routes/Users_.route.js'
 import  EliminarUsers from './src/routes/Users_.route.js'
+// USERS_ROL
+import  ListarUsersRol  from './src/routes/Users_Rol.route.js'; //  ListarUsers
+import  ActualizarUsersRol  from './src/routes/Users_Rol.route.js';
+import  RegistrarUsersRol  from './src/routes/Users_Rol.route.js';
+import  BuscarUsersRol from './src/routes/Users_Rol.route.js'
+import  EliminarUsersRol from './src/routes/Users_Rol.route.js'
 
 
 
@@ -31,6 +37,13 @@ app.use(ActualizarUsers);
 app.use(RegistrarUsers);
 app.use/(BuscarUsers);
 app.use(EliminarUsers);
+
+// USERS_ROL
+app.use(ListarUsersRol);
+app.use(ActualizarUsersRol);
+app.use(RegistrarUsersRol);
+app.use/(BuscarUsersRol);
+app.use(EliminarUsersRol);
 
 
 // Usar el router
