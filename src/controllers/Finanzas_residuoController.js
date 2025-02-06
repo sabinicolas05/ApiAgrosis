@@ -1,3 +1,4 @@
+
 import { client } from '../database/conexion.js';
 
 export const ListarFinanzasResiduo = async (req, res) => {
