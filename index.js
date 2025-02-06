@@ -16,6 +16,12 @@ import  RegistrarFinanzasVenta  from './src/routes/FinanzasVentaroute.js';
 import  BuscarFinanzasVenta from './src/routes/FinanzasVentaroute.js'
 import  EliminarFinanzasVenta from './src/routes/FinanzasVentaroute.js'
 
+// FINANZAS_RESIDUO
+import  ListarFinanzasResiduo  from './src/routes/FinanzasResiduoroute.js'; //  ListarFinanzasResiduo
+import  ActualizarFinanzasResiduo  from './src/routes/FinanzasResiduoroute.js';
+import  RegistrarFinanzasResiduo  from './src/routes/FinanzasResiduoroute.js';
+import  BuscarFinanzasResiduo from './src/routes/FinanzasResiduoroute.js'
+import  EliminarFinanzasResiduo from './src/routes/FinanzasResiduoroute.js'
 
 
 // FINANZAS_VENTA
@@ -24,5 +30,12 @@ app.use(ActualizarFinanzasVenta);
 app.use(RegistrarFinanzasVenta);
 app.use/(BuscarFinanzasVenta);
 app.use(EliminarFinanzasVenta);
+
+// FINANZAS_RESIDUO
+app.use(ListarFinanzasResiduo);
+app.use(ActualizarFinanzasResiduo);
+app.use(RegistrarFinanzasResiduo);
+app.use/(BuscarFinanzasResiduo);
+app.use(EliminarFinanzasResiduo);
 
 
