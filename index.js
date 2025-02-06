@@ -30,6 +30,13 @@ import  RegistrarFinanzasProduccion  from './src/routes/Finanzas_produccionroute
 import  BuscarFinanzasProduccion from './src/routes/Finanzas_produccionroute.js'
 import  EliminarFinanzasProduccion from './src/routes/Finanzas_produccionroute.js'
 
+// FINANZAS_PAGO
+import  ListarFinanzasPago  from './src/routes/FinanzasPago.route.js'; //  ListarFinanzasPago
+import  ActualizarFinanzasPago  from './src/routes/FinanzasPago.route.js';
+import  RegistrarFinanzasPago  from './src/routes/FinanzasPago.route.js';
+import  BuscarFinanzasPago from './src/routes/FinanzasPago.route.js'
+import  EliminarFinanzasPago from './src/routes/FinanzasPago.route.js'
+
 
 // FINANZAS_VENTA
 app.use(ListarFinanzasVenta);
@@ -52,4 +59,17 @@ app.use(RegistrarFinanzasProduccion);
 app.use/(BuscarFinanzasProduccion);
 app.use(EliminarFinanzasProduccion);
 
+// FINANZAS_PAGO
+import  ListarFinanzasPago  from './src/routes/FinanzasPago.route.js'; //  ListarFinanzasPago
+import  ActualizarFinanzasPago  from './src/routes/FinanzasPago.route.js';
+import  RegistrarFinanzasPago  from './src/routes/FinanzasPago.route.js';
+import  BuscarFinanzasPago from './src/routes/FinanzasPago.route.js'
+import  EliminarFinanzasPago from './src/routes/FinanzasPago.route.js'
+
+// FINANZAS_PAGO
+app.use(ListarFinanzasPago);
+app.use(ActualizarFinanzasPago);
+app.use(RegistrarFinanzasPago);
+app.use/(BuscarFinanzasPago);
+app.use(EliminarFinanzasPago);
 
