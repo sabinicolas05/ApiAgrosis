@@ -225,3 +225,11 @@ app.use(router);
 app.listen(4000, () => {
   console.log('Server running on port 4000');
 });
+
+
+// DOCUMENTACION
+
+app.set('view engine', 'ejs');
+app.get('/doc', (req, res) => {
+    res.render('documentacion.ejs'); 
+  });
