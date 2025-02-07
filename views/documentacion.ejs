@@ -1,0 +1,4484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentacion de API Postgres</title>
+</head>
+<body>
+    <h1>Documentacion API JJM</h1>
+    <h1>Validar User/Token</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>1</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ValidarUser</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/login</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Validación de las credenciales de usuario (login y password).</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Parametros:</th>
+            <td>login, password (en el cuerpo de la solicitud)</td>
+        </tr>
+        <tr>
+            <th>Respuesta:</th>
+            <td>Generación de un token JWT si el usuario es validado correctamente. Si no, mensaje de usuario no autorizado.</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+<br>
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Numero:</th>
+        <td>2</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>ValidarToken</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/validate-token</td>
+    </tr>
+    <tr>
+        <th>Descripcion:</th>
+        <td>Validación del token de autenticación para verificar que el usuario está autorizado.</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>token: {TOKEN}</td>
+    </tr>
+    <tr>
+        <th>Respuesta:</th>
+        <td>Devuelve un mensaje indicando si el token es válido o no.</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador, Instructor</td>
+    </tr>
+</table>
+
+    <br>
+        <h1>Sensores</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>3</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ActualizarSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/sensors/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Actualiza los datos de un sensor por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+
+    <br>
+        <h1>Tipo Sensor</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>3</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ListarSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/sensors</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Devuelve todos los sensores registrados en el sistema.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>4</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>BuscarSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/sensors/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Busca un sensor específico por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>5</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ActualizarSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/sensors/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Actualiza los datos de un sensor específico por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>6</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>RegistrarSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/sensors</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Registra un nuevo sensor en el sistema.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>7</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>EliminarSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/sensors/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Elimina un sensor del sistema por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>8</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ListarTipoSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TipoSensor</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Obtiene todos los tipos de sensores registrados en el sistema.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>9</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>BuscarTipoSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TipoSensor/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Busca un tipo de sensor específico por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>10</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ActualizarTipoSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TipoSensor/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Actualiza un tipo de sensor existente por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>11</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>RegistrarTipoSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TipoSensor</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Registra un nuevo tipo de sensor en el sistema.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>12</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>EliminarTipoSensor</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TipoSensor/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Elimina un tipo de sensor del sistema por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+        <h1>Configuracion de Sensor</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>13</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>RegistrarSensorConfig</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/SensorConfig</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Registra una nueva configuración de sensor en el sistema.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>14</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>EliminarSensorConfig</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/SensorConfig/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Elimina la configuración de un sensor por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Pasante</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>15</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ListarSensorConfig</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/SensorConfig</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Lista todas las configuraciones de sensores registradas en el sistema.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+    
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>16</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>BuscarSensorConfig</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/SensorConfig/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Busca una configuración de sensor específica por su ID.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor, Pasante</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>17</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ActualizarSensorConfig</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/SensorConfig/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Actualiza la configuración de un sensor existente.</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+
+        <h1>Trazabilidad de Actividad</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>18</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ListarTrazActividad</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazActividad</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Trazabilidad de Actividad</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>19</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>BuscarTrazActividad</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazActividad/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Trazabilidad de Actividad</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>20</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>ActualizarTrazActividad</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazActividad/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Trazabilidad de Actividad</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>21</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>RegistrarTrazActividad</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazActividad</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Trazabilidad de Actividad</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Numero:</th>
+            <td>22</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>EliminarTrazActividad</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazActividad/:id</td>
+        </tr>
+        <tr>
+            <th>Descripcion:</th>
+            <td>Trazabilidad de Actividad</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+        <h1>Trazabilidad de afeccion</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>23</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazAfeccion</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazAfeccion</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Afeccion</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>24</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazAfeccion/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazAfeccion/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Afeccion</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>25</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazAfeccion/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazAfeccion/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Afeccion</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>26</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazAfeccion</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazAfeccion</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Afeccion</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>27</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazAfeccion/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazAfeccion/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Afeccion</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+        <h1>Trazabilidad de Aseignacion de Actividades</h1>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>28</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazAsigna</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazAsigna</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Asignacion de Actividades</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, Instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>29</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazAsigna/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazAsigna/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Asignacion de Actividades</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, Instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazAsigna/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazAsigna/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Asignacion de Actividades</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>31</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazAsigna</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazAsigna</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Asignacion de Actividades</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>32</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazAsigna/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazAsigna/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Asignacion de Actividades</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+        <h1>Trazabilidad Bancal</h1>
+
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>33</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazListarTrazBancal</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Bancal</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>34</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazBuscarTrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Bancal</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>35</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazActualizarTrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Bancal</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>36</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazRegistrarTrazBancal</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/registrarTrazBancal</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Bancal</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>37</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazEliminarTrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Bancal</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+
+        <h1>Trazabilidad de Controles</h1>
+
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>38</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazListar</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Controles</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador,instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>39</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazBuscar/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Controles</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador,instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>40</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazActualizar/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Controles</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador,instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>41</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazRegistrar</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Controles</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador,instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>42</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazEliminar/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazBancal/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Controles</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador,instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        <h1></h1>
+
+        <h1>Trazabilidad de Cultivo</h1>
+
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>38</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazListar</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazCultivo</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Cultivo</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>39</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazBuscar/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazCultivo/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Cultivo</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor, pasante</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>40</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazActualizar/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazCultivo/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Cultivo</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>41</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazRegistrar</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazCultivo</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Cultivo</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>42</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazEliminar/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazCultivo/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Cultivo</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <h1>Trazabilidad Especie</h1>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>42</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazListarEspecie</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazEspecie</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Especie</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>43</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazBuscarEspecie/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazEspecie/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Especie</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>44</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazActualizarEspecie/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazEspecie/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Especie</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>45</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazRegistrarEspecie</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazEspecie</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Especie</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>46</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazEliminarEspecie/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazEspecie/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Especie</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <h1>Trazabilidad Lote</h1>
+
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>47</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazListarLote</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazLote</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Lote</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>48</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazBuscarLote/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazLote/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Lote</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>49</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazActualizarLote/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazLote/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Lote</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>50</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazRegistrarLote</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazLote</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Lote</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>51</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazEliminarLote/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazLote/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Lote</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <h1>Trazabilidad Notificacion</h1>
+
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>51</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazListarNotificacion</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazNotificacion</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Notificación</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>52</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazBuscarNotificacion/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazNotificacion/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Notificación</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>GET</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador, instructor</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>53</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazActualizarNotificacion/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazNotificacion/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Notificación</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>PUT</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>54</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazNotificacion</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazNotificacion</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Notificación</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>POST</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th>Número:</th>
+                <td>55</td>
+            </tr>
+            <tr>
+                <th>Nombre del web service:</th>
+                <td>TrazNotificacion/{id}</td>
+            </tr>
+            <tr>
+                <th>URL:</th>
+                <td>https://localhost:4000/TrazNotificacion/{id}</td>
+            </tr>
+            <tr>
+                <th>Descripción:</th>
+                <td>Trazabilidad de Notificación</td>
+            </tr>
+            <tr>
+                <th>Verbo HTTP:</th>
+                <td>DELETE</td>
+            </tr>
+            <tr>
+                <th>Header:</th>
+                <td>Content-Type: application/json</td>
+            </tr>
+            <tr>
+                <th>Usuarios:</th>
+                <td>Administrador</td>
+            </tr>
+        </table>
+        <br>
+        
+    <h1>Trazabilidad Plaga</h1>
+
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>56</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazPlaga</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazPlaga</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>57</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>58</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>59</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazPlaga</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazPlaga</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>60</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+
+    <h1>Trazabilidad semillero</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>60</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazSemillero</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazSemillero</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Semillero</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>61</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrarSemillero/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazSemillero/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Semillero</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador, Instructor</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>62</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazSemillero/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazSemillero/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Semillero</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>63</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazSemillero</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazSemillero</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Semillero</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>64</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazSemillero/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazSemillero/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Semillero</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Trazabilidad Tipo Especie</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>64</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoEspecie</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoEspecie</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Especie</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>65</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoEspecie/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoEspecie/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Especie</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>66</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoEspecie/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoEspecie/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Especie</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>67</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoEspecie</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoEspecie</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Especie</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>68</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoEspecie/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoEspecie/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Especie</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Trazabilidad Tipo Plaga</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>68</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoPlaga</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoPlaga</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>69</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>70</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>71</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoPlaga</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoPlaga</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>72</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazTipoPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/TrazTipoPlaga/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Tipo de Plaga</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Trazabilidad tipo residuo</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>72</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazControl</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/Trazresiduo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>73</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazControl/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/Trazresiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>74</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazControl/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/Trazresiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Cuerpo:</th>
+            <td>{ "nombre": "nuevo nombre" }</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>75</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazControl</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/Trazresiduo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Cuerpo:</th>
+            <td>{ "nombre": "nuevo nombre" }</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>76</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazControl/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/Trazresiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Finazas Venta</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>72</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasVenta</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasVenta</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Venta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>73</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasVenta/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasVenta/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Venta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>74</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasVenta/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasVenta/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Venta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>75</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasVenta</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasVenta</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Venta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>76</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasVenta/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasVenta/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Venta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Finanzas Residuo</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>77</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>78</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>abilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>79</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazFinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TrazFinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>80</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazFinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TrazFinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>81</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazFinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TrazFinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Finanzas Produccion</h1>
+
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>81</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>TrazFinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/TrazFinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>82</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>83</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>84</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasResiduo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>85</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasResiduo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Trazabilidad de Finanzas Residuo</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <h1>Finanzas Pago</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>85</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasPago</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasPago</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Finanzas Pago</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>86</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasPago/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasPago/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Finanzas Pago</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>87</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasPago/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasPago/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Finanzas Pago</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>88</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasPago</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasPago</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Finanzas Pago</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>89</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>FinanzasPago/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/FinanzasPago/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Finanzas Pago</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    <h1>Inventario Herramienta</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>89</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioHerramienta</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioHerramienta</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Herramienta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>90</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioHerramienta/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioHerramienta/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Herramienta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>91</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioHerramienta/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioHerramienta/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Herramienta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>92</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioHerramienta</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioHerramienta</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Herramienta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>93</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioHerramienta/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioHerramienta/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Herramienta</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    <h1>Inventario Insumo</h1>
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>94</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioInsumo</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioInsumo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Insumos</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>95</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioInsumo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioInsumo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Insumos</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>GET</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>96</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioInsumo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioInsumo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Insumos</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>PUT</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>97</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioInsumo</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioInsumo</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Insumos</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>POST</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th>Número:</th>
+            <td>98</td>
+        </tr>
+        <tr>
+            <th>Nombre del web service:</th>
+            <td>InventarioInsumo/{id}</td>
+        </tr>
+        <tr>
+            <th>URL:</th>
+            <td>https://localhost:4000/api/InventarioInsumo/{id}</td>
+        </tr>
+        <tr>
+            <th>Descripción:</th>
+            <td>Inventario de Insumos</td>
+        </tr>
+        <tr>
+            <th>Verbo HTTP:</th>
+            <td>DELETE</td>
+        </tr>
+        <tr>
+            <th>Header:</th>
+            <td>Content-Type: application/json</td>
+        </tr>
+        <tr>
+            <th>Usuarios:</th>
+            <td>Administrador</td>
+        </tr>
+    </table>
+    <br>
+<h1>Inventario tipo herramienta</h1>
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>99</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoHerramienta</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoHerramienta</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Herramienta</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>100</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoHerramienta/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoHerramienta/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Herramienta</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>101</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoHerramienta/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoHerramienta/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Herramienta</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>102</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoHerramienta</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoHerramienta</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Herramienta</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>103</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoHerramienta/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoHerramienta/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Herramienta</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+<h1>Inventario Tipo Insumo</h1>
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>104</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoInsumo</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoInsumo</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Insumo</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>105</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoInsumo/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoInsumo/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Insumo</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>106</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoInsumo/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoInsumo/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Insumo</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>107</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoInsumo</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoInsumo</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Insumo</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>108</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>InventarioTipoInsumo/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/InventarioTipoInsumo/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Inventario de Tipo de Insumo</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+<h1>Users Rol</h1>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>109</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>UserRol</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/UserRol</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Roles de Usuario</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>110</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>UserRol/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/UserRol/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Roles de Usuario</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>111</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>UserRol/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/UserRol/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Roles de Usuario</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>112</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>UserRol</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/UserRol</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Roles de Usuario</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>113</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>UserRol/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/UserRol/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Roles de Usuario</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<h1>Users</h1>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>114</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>User</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/User</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Usuarios</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>115</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>User/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/User/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Usuarios</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>GET</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>116</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>User/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/User/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Usuarios</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>PUT</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>117</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>User</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/User</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Usuarios</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>POST</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+<table border="1" style="border-collapse: collapse;">
+    <tr>
+        <th>Número:</th>
+        <td>118</td>
+    </tr>
+    <tr>
+        <th>Nombre del web service:</th>
+        <td>User/{id}</td>
+    </tr>
+    <tr>
+        <th>URL:</th>
+        <td>https://localhost:4000/api/User/{id}</td>
+    </tr>
+    <tr>
+        <th>Descripción:</th>
+        <td>Gestión de Usuarios</td>
+    </tr>
+    <tr>
+        <th>Verbo HTTP:</th>
+        <td>DELETE</td>
+    </tr>
+    <tr>
+        <th>Header:</th>
+        <td>Content-Type: application/json</td>
+    </tr>
+    <tr>
+        <th>Usuarios:</th>
+        <td>Administrador</td>
+    </tr>
+</table>
+<br>
+
+</body>
+</html>
