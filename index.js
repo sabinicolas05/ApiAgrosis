@@ -18,6 +18,15 @@ import  RegistrarSensorConfig  from './src/routes/IoT_Coniguracion.route.js';
 import  BuscarSensorConfig from './src/routes/IoT_Coniguracion.route.js'
 import  EliminarSensorConfig from './src/routes/IoT_Coniguracion.route.js'
 
+// TIPO_SENSORES
+
+import  ListarTipoSensor  from './src/routes/IoT_Tipo_Sensor.route.js'; //  ListarTipoSensor
+import  ActualizarTipoSensor  from './src/routes/IoT_Tipo_Sensor.route.js';
+import  RegistrarTipoSensor  from './src/routes/IoT_Tipo_Sensor.route.js';
+import  BuscarTipoSensor from './src/routes/IoT_Tipo_Sensor.route.js'
+import  EliminarTipoSensor from './src/routes/IoT_Tipo_Sensor.route.js'
+
+
 app.use(express.json());
 
 
@@ -35,6 +44,12 @@ app.use(RegistrarSensorConfig);
 app.use/(BuscarSensorConfig);
 app.use(EliminarSensorConfig);
 
+// TIPO_SENSOR
+app.use(ListarTipoSensor);
+app.use(ActualizarTipoSensor);
+app.use(RegistrarTipoSensor);
+app.use/(BuscarTipoSensor);
+app.use(EliminarTipoSensor);
 
 
 // Usar el router
