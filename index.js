@@ -36,6 +36,124 @@ import  RegistrarSensorConfig  from './src/routes/IoT_Coniguracion.route.js';
 import  BuscarSensorConfig from './src/routes/IoT_Coniguracion.route.js'
 import  EliminarSensorConfig from './src/routes/IoT_Coniguracion.route.js'
 
+// TRAZABILIDAD_ACTIVIDAD
+
+import  ListarTrazaActividad  from './src/routes/Trazabilidad_actividad.route.js'; //  ListarTrazaActividad
+import  ActualizarTrazaActividad  from './src/routes/Trazabilidad_actividad.route.js';
+import  RegistrarTrazaActividad  from './src/routes/Trazabilidad_actividad.route.js';
+import  BuscarTrazaActividad from './src/routes/Trazabilidad_actividad.route.js'
+import  EliminarTrazaActividad from './src/routes/Trazabilidad_actividad.route.js'
+
+
+// TRAZABILIDAD_AFEECION
+
+import  ListarTrazAfeccion  from './src/routes/Trazabilidad_afeccion.route.js'; //  ListarTrazAfeccion
+import  ActualizarTrazAfeccion  from './src/routes/Trazabilidad_afeccion.route.js';
+import  RegistrarTrazAfeccion  from './src/routes/Trazabilidad_afeccion.route.js';
+import  BuscarTrazAfeccion from './src/routes/Trazabilidad_afeccion.route.js'
+import  EliminarTrazAfeccion from './src/routes/Trazabilidad_afeccion.route.js'
+
+
+// TRAZABILIDAD_ASIGNACION
+
+import  ListarTrazAsigna  from './src/routes/Trazabilidad_asigna_Act.route.js'; //  ListarTrazAsigna
+import  ActualizarTrazAsigna  from './src/routes/Trazabilidad_asigna_Act.route.js';
+import  RegistrarTrazAsigna  from './src/routes/Trazabilidad_asigna_Act.route.js';
+import  BuscarTrazAsigna from './src/routes/Trazabilidad_asigna_Act.route.js'
+import  EliminarTrazAsigna from './src/routes/Trazabilidad_asigna_Act.route.js'
+
+// TRAZABILIDAD_BANCAL
+
+import  ListarTrazBancal  from './src/routes/Trazabilidad_bancal.route.js'; //  ListarTrazBancal
+import  ActualizarTrazBancal  from './src/routes/Trazabilidad_bancal.route.js';
+import  RegistrarTrazBancal  from './src/routes/Trazabilidad_bancal.route.js';
+import  BuscarTrazBancal from './src/routes/Trazabilidad_bancal.route.js'
+import  EliminarTrazBancal from './src/routes/Trazabilidad_bancal.route.js'
+
+
+// TRAZABILIDAD_CONTROL
+
+import  ListarTrazControl  from './src/routes/Trazabilidad_control.route.js'; //  ListarTrazControl
+import  ActualizarTrazControl  from './src/routes/Trazabilidad_control.route.js';
+import  RegistrarTrazControl  from './src/routes/Trazabilidad_control.route.js';
+import  BuscarTrazControl from './src/routes/Trazabilidad_control.route.js'
+import  EliminarTrazControl from './src/routes/Trazabilidad_control.route.js'
+
+// TRAZABILIDAD_CULTIVO
+
+import  ListarTrazCultivo  from './src/routes/Trazabilidad_cultivo.route.js'; //  ListarTrazCultivo
+import  ActualizarTrazCultivo  from './src/routes/Trazabilidad_cultivo.route.js';
+import  RegistrarTrazCultivo  from './src/routes/Trazabilidad_cultivo.route.js';
+import  BuscarTrazCultivo from './src/routes/Trazabilidad_cultivo.route.js'
+import  EliminarTrazCultivo from './src/routes/Trazabilidad_cultivo.route.js'
+
+
+
+// TRAZABILIDAD_ESPECIE
+import  ListarTrazEspecie  from './src/routes/Trazabilidad_especie.route.js'; //  ListarTrazEspecie
+import  ActualizarTrazEspecie  from './src/routes/Trazabilidad_especie.route.js';
+import  RegistrarTrazEspecie  from './src/routes/Trazabilidad_especie.route.js';
+import  BuscarTrazEspecie from './src/routes/Trazabilidad_especie.route.js'
+import  EliminarTrazEspecie from './src/routes/Trazabilidad_especie.route.js'
+
+
+// TRAZABILIDAD_LOTE
+import  ListarTrazLote  from './src/routes/Trazabilidad_lote.route.js'; //  ListarTrazLote
+import  ActualizarTrazLote  from './src/routes/Trazabilidad_lote.route.js';
+import  RegistrarTrazLote  from './src/routes/Trazabilidad_lote.route.js';
+import  BuscarTrazLote from './src/routes/Trazabilidad_lote.route.js'
+import  EliminarTrazLote from './src/routes/Trazabilidad_lote.route.js'
+
+
+// TRAZABILIDAD_NOTIFICACION
+import  ListarTrazNotificacion  from './src/routes/Trazabilidad_notificacion.route.js'; //  ListarTrazNotificacion
+import  ActualizarTrazNotificacion  from './src/routes/Trazabilidad_notificacion.route.js';
+import  RegistrarTrazNotificacion  from './src/routes/Trazabilidad_notificacion.route.js';
+import  BuscarTrazNotificacion from './src/routes/Trazabilidad_notificacion.route.js'
+import  EliminarTrazNotificacion from './src/routes/Trazabilidad_notificacion.route.js'
+
+
+// TRAZABILIDAD_PLAGA
+import  ListarTrazPlaga  from './src/routes/Trazabilidad_plaga.route.js'; //  ListarTrazPlaga
+import  ActualizarTrazPlaga  from './src/routes/Trazabilidad_plaga.route.js';
+import  RegistrarTrazPlaga  from './src/routes/Trazabilidad_plaga.route.js';
+import  BuscarTrazPlaga from './src/routes/Trazabilidad_plaga.route.js'
+import  EliminarTrazPlaga from './src/routes/Trazabilidad_plaga.route.js'
+
+
+// TRAZABILIDAD_SEMILLERO
+import  ListarTrazSemillero  from './src/routes/Trazabilidad_semilleroroute.js'; //  ListarTrazSemillero
+import  ActualizarTrazSemillero  from './src/routes/Trazabilidad_semilleroroute.js';
+import  RegistrarTrazSemillero  from './src/routes/Trazabilidad_semilleroroute.js';
+import  BuscarTrazSemillero from './src/routes/Trazabilidad_semilleroroute.js'
+import  EliminarTrazSemillero from './src/routes/Trazabilidad_semilleroroute.js'
+
+
+// TRAZABILIDAD_TIPO_ESPECIE
+import  ListarTrazTipoEspecie  from './src/routes/Trazabilidad_tipo_especieroute.js'; //  ListarTrazTipoEspecie
+import  ActualizarTrazTipoEspecie  from './src/routes/Trazabilidad_tipo_especieroute.js';
+import  RegistrarTrazTipoEspecie  from './src/routes/Trazabilidad_tipo_especieroute.js';
+import  BuscarTrazTipoEspecie from './src/routes/Trazabilidad_tipo_especieroute.js'
+import  EliminarTrazTipoEspecie from './src/routes/Trazabilidad_tipo_especieroute.js'
+
+
+// TRAZABILIDAD_TIPO_PLAGA
+import  ListarTrazTipoPlaga  from './src/routes/Trazabilidad_tipo_plagaroute.js'; //  ListarTrazTipoPlaga
+import  ActualizarTrazTipoPlaga  from './src/routes/Trazabilidad_tipo_plagaroute.js';
+import  RegistrarTrazTipoPlaga  from './src/routes/Trazabilidad_tipo_plagaroute.js';
+import  BuscarTrazTipoPlaga from './src/routes/Trazabilidad_tipo_plagaroute.js'
+import  EliminarTrazTipoPlaga from './src/routes/Trazabilidad_tipo_plagaroute.js'
+
+
+// TRAZABILIDAD_TIPO_RESIDUO
+import  ListarTrazTipoResiduo  from './src/routes/Trazabilidad_tipo_residuoroute.js'; //  ListarTrazTipoResiduo
+import  ActualizarTrazTipoResiduo  from './src/routes/Trazabilidad_tipo_residuoroute.js';
+import  RegistrarTrazTipoResiduo  from './src/routes/Trazabilidad_tipo_residuoroute.js';
+import  BuscarTrazTipoResiduo from './src/routes/Trazabilidad_tipo_residuoroute.js'
+import  EliminarTrazTipoResiduo from './src/routes/Trazabilidad_tipo_residuoroute.js'
+
+
+
 // TIPO_SENSORES
 
 import  ListarTipoSensor  from './src/routes/IoT_Tipo_Sensor.route.js'; //  ListarTipoSensor
@@ -215,6 +333,116 @@ app.use(RegistrarTipoInsumo);
 app.use/(BuscarTipoInsumo);
 app.use(EliminarTipoInsumo);
 
+// TRAZABILIDAD_ACTIVIDAD
+app.use(ListarTrazaActividad);
+app.use(ActualizarTrazaActividad);
+app.use(RegistrarTrazaActividad);
+app.use/(BuscarTrazaActividad);
+app.use(EliminarTrazaActividad);
+
+// TRAZABILIDAD_AFECCION
+app.use(ListarTrazAfeccion);
+app.use(ActualizarTrazAfeccion);
+app.use(RegistrarTrazAfeccion);
+app.use/(BuscarTrazAfeccion);
+app.use(EliminarTrazAfeccion);
+
+
+// TRAZABILIDAD_ASIGNA_ACTIVIDAD
+app.use(ListarTrazAsigna);
+app.use(ActualizarTrazAsigna);
+app.use(RegistrarTrazAsigna);
+app.use/(BuscarTrazAsigna);
+app.use(EliminarTrazAsigna);
+
+
+// TRAZABILIDAD_BANCAL
+app.use(ListarTrazBancal);
+app.use(ActualizarTrazBancal);
+app.use(RegistrarTrazBancal);
+app.use/(BuscarTrazBancal);
+app.use(EliminarTrazBancal);
+
+
+// TRAZABILIDAD_CONTROL
+app.use(ListarTrazControl);
+app.use(ActualizarTrazControl);
+app.use(RegistrarTrazControl);
+app.use/(BuscarTrazControl);
+app.use(EliminarTrazControl);
+
+
+// TRAZABILIDAD_CULTIVO
+app.use(ListarTrazCultivo);
+app.use(ActualizarTrazCultivo);
+app.use(RegistrarTrazCultivo);
+app.use/(BuscarTrazCultivo);
+app.use(EliminarTrazCultivo);
+
+// TRAZABILIDAD_ESPECIE
+app.use(ListarTrazEspecie);
+app.use(ActualizarTrazEspecie);
+app.use(RegistrarTrazEspecie);
+app.use/(BuscarTrazEspecie);
+app.use(EliminarTrazEspecie);
+
+
+// TRAZABILIDAD_LOTE
+app.use(ListarTrazLote);
+app.use(ActualizarTrazLote);
+app.use(RegistrarTrazLote);
+app.use/(BuscarTrazLote);
+app.use(EliminarTrazLote);
+
+
+// TRAZABILIDAD_NOTIFICACION
+app.use(ListarTrazNotificacion);
+app.use(ActualizarTrazNotificacion);
+app.use(RegistrarTrazNotificacion);
+app.use/(BuscarTrazNotificacion);
+app.use(EliminarTrazNotificacion);
+
+
+// TRAZABILIDAD_NOTIFICACION
+app.use(ListarTrazPlaga);
+app.use(ActualizarTrazPlaga);
+app.use(RegistrarTrazPlaga);
+app.use/(BuscarTrazPlaga);
+app.use(EliminarTrazPlaga);
+
+
+
+
+// TRAZABILIDAD_SEMILLERO
+app.use(ListarTrazSemillero);
+app.use(ActualizarTrazSemillero);
+app.use(RegistrarTrazSemillero);
+app.use/(BuscarTrazSemillero);
+app.use(EliminarTrazSemillero);
+
+
+// TRAZABILIDAD_TIPO_ESPECIE
+app.use(ListarTrazTipoEspecie);
+app.use(ActualizarTrazTipoEspecie);
+app.use(RegistrarTrazTipoEspecie);
+app.use/(BuscarTrazTipoEspecie);
+app.use(EliminarTrazTipoEspecie);
+
+
+// TRAZABILIDAD_TIPO_PLAGA
+app.use(ListarTrazTipoPlaga);
+app.use(ActualizarTrazTipoPlaga);
+app.use(RegistrarTrazTipoPlaga);
+app.use/(BuscarTrazTipoPlaga);
+app.use(EliminarTrazTipoPlaga);
+
+
+// TRAZABILIDAD_TIPO_RESIDUO
+app.use(ListarTrazTipoResiduo);
+app.use(ActualizarTrazTipoResiduo);
+app.use(RegistrarTrazTipoResiduo);
+app.use/(BuscarTrazTipoResiduo);
+app.use(EliminarTrazTipoResiduo);
 
 
 
