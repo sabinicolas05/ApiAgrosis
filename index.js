@@ -444,6 +444,12 @@ app.use(RegistrarTrazTipoResiduo);
 app.use/(BuscarTrazTipoResiduo);
 app.use(EliminarTrazTipoResiduo);
 
+// DOCUMENTACION
+
+app.set('view engine', 'ejs');
+app.get('/doc', (req, res) => {
+    res.render('documentacion.ejs'); 
+  });
 
 
 // Usar el router
@@ -455,9 +461,4 @@ app.listen(4000, () => {
 });
 
 
-// DOCUMENTACION
 
-app.set('view engine', 'ejs');
-app.get('/doc', (req, res) => {
-    res.render('documentacion.ejs'); 
-  });
