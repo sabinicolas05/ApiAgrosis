@@ -3,13 +3,14 @@ import { ListarTipoHerramienta, RegistrarTipoHerramienta } from '../controllers/
 import {ActualizarTipoHerramienta} from '../controllers/Inventario_tipo_herramientaController.js';
 import { BuscarTipoHerramienta } from '../controllers/Inventario_tipo_herramientaController.js';
 import { EliminarTipoHerramienta } from '../controllers/Inventario_tipo_herramientaController.js';
+import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
-router.get('/TipoHerramienta', ListarTipoHerramienta);
-router.get('/TipoHerramienta/:id', BuscarTipoHerramienta);
-router.put('/TipoHerramienta/:id', ActualizarTipoHerramienta)
-router.post('/TipoHerramienta', RegistrarTipoHerramienta)
-router.delete('/TipoHerramienta/:id', EliminarTipoHerramienta);
+router.get('/TipoHerramienta',ValidarToken, ListarTipoHerramienta);
+router.get('/TipoHerramienta/:id',ValidarToken, BuscarTipoHerramienta);
+router.put('/TipoHerramienta/:id',ValidarToken, ActualizarTipoHerramienta)
+router.post('/TipoHerramienta',ValidarToken, RegistrarTipoHerramienta)
+router.delete('/TipoHerramienta/:id',ValidarToken, EliminarTipoHerramienta);
 
 
 export default router;

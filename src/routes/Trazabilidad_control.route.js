@@ -3,13 +3,14 @@ import { ListarTrazControl, RegistrarTrazControl } from '../controllers/Trazabil
 import {ActualizarTrazControl} from '../controllers/Trazabilidad_controlController.js';
 import { BuscarTrazControl } from '../controllers/Trazabilidad_controlController.js';
 import { EliminarTrazControl } from '../controllers/Trazabilidad_controlController.js';
+import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
-router.get('/TrazControl', ListarTrazControl);
-router.get('/TrazControl/:id', BuscarTrazControl);
-router.put('/TrazControl/:id', ActualizarTrazControl)
-router.post('/TrazControl', RegistrarTrazControl)
-router.delete('/TrazControl/:id', EliminarTrazControl);
+router.get('/TrazControl',ValidarToken, ListarTrazControl);
+router.get('/TrazControl/:id',ValidarToken, BuscarTrazControl);
+router.put('/TrazControl/:id',ValidarToken, ActualizarTrazControl)
+router.post('/TrazControl',ValidarToken, RegistrarTrazControl)
+router.delete('/TrazControl/:id',ValidarToken, EliminarTrazControl);
 
 
 export default router;

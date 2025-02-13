@@ -3,13 +3,14 @@ import { ListarTrazEspecie, RegistrarTrazEspecie } from '../controllers/Trazabil
 import {ActualizarTrazEspecie} from '../controllers/Trazabilidad_especieController.js';
 import { BuscarTrazEspecie } from '../controllers/Trazabilidad_especieController.js';
 import { EliminarTrazEspecie } from '../controllers/Trazabilidad_especieController.js';
+import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
-router.get('/TrazEspecie', ListarTrazEspecie);
-router.get('/TrazEspecie/:id', BuscarTrazEspecie);
-router.put('/TrazEspecie/:id', ActualizarTrazEspecie)
-router.post('/TrazEspecie', RegistrarTrazEspecie)
-router.delete('/TrazEspecie/:id', EliminarTrazEspecie);
+router.get('/TrazEspecie', ValidarToken,ListarTrazEspecie);
+router.get('/TrazEspecie/:id',ValidarToken, BuscarTrazEspecie);
+router.put('/TrazEspecie/:id',ValidarToken, ActualizarTrazEspecie)
+router.post('/TrazEspecie',ValidarToken, RegistrarTrazEspecie)
+router.delete('/TrazEspecie/:id',ValidarToken, EliminarTrazEspecie);
 
 
 export default router;

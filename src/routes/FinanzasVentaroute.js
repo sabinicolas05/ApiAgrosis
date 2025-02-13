@@ -3,13 +3,14 @@ import { ListarFinanzasVenta, RegistrarFinanzasVenta } from '../controllers/Fina
 import {ActualizarFinanzasVenta} from '../controllers/Finanzas_ventaController.js';
 import { BuscarFinanzasVenta } from '../controllers/Finanzas_ventaController.js';
 import { EliminarFinanzasVenta } from '../controllers/Finanzas_ventaController.js';
+import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
-router.get('/FinanzasVenta', ListarFinanzasVenta);
-router.get('/FinanzasVenta/:id', BuscarFinanzasVenta);
-router.put('/FinanzasVenta/:id', ActualizarFinanzasVenta)
-router.post('/FinanzasVenta', RegistrarFinanzasVenta)
-router.delete('/FinanzasVenta/:id', EliminarFinanzasVenta);
+router.get('/FinanzasVenta', ValidarToken,ListarFinanzasVenta);
+router.get('/FinanzasVenta/:id', ValidarToken,BuscarFinanzasVenta);
+router.put('/FinanzasVenta/:id',ValidarToken, ActualizarFinanzasVenta)
+router.post('/FinanzasVenta',ValidarToken, RegistrarFinanzasVenta)
+router.delete('/FinanzasVenta/:id',ValidarToken, EliminarFinanzasVenta);
 
 
 export default router;

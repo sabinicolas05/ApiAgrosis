@@ -3,13 +3,14 @@ import { ListarTipoInsumo, RegistrarTipoInsumo } from '../controllers/Inventario
 import {ActualizarTipoInsumo} from '../controllers/Inventario_tipo_insumoController.js';
 import { BuscarTipoInsumo } from '../controllers/Inventario_tipo_insumoController.js';
 import { EliminarTipoInsumo } from '../controllers/Inventario_tipo_insumoController.js';
+import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
-router.get('/TipoInsumo', ListarTipoInsumo);
-router.get('/TipoInsumo/:id', BuscarTipoInsumo);
-router.put('/TipoInsumo/:id', ActualizarTipoInsumo)
-router.post('/TipoInsumo', RegistrarTipoInsumo)
-router.delete('/TipoInsumo/:id', EliminarTipoInsumo);
+router.get('/TipoInsumo',ValidarToken, ListarTipoInsumo);
+router.get('/TipoInsumo/:id',ValidarToken, BuscarTipoInsumo);
+router.put('/TipoInsumo/:id',ValidarToken, ActualizarTipoInsumo)
+router.post('/TipoInsumo',ValidarToken, RegistrarTipoInsumo)
+router.delete('/TipoInsumo/:id',ValidarToken, EliminarTipoInsumo);
 
 
 export default router;

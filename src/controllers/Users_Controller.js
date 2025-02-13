@@ -3,8 +3,8 @@ import { client } from '../database/conexion.js';
 export const ListarUser = async (req, res) => {
   try {
     const response = await client.query(`
-      SELECT id, first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, 
-             is_superuser, fk_rol_id, is_staff, is_active, date_joined 
+      SELECT id, first_name, last_name, username, identificacion, telefono, email, password, 
+             is_superuser, fk_rol_id, is_staff, is_active 
       FROM "Users_usuario";
     `);
     
@@ -23,8 +23,8 @@ export const BuscarUser = async (req, res) => {
 
   try {
     const response = await client.query(`
-      SELECT id, first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, 
-             is_superuser, fk_rol_id, is_staff, is_active, date_joined 
+      SELECT id, first_name, last_name, username, identificacion, telefono, email, password, 
+             is_superuser, fk_rol_id, is_staff, is_active 
       FROM "Users_usuario" WHERE fk_rol_id = $1;
     `, [UserRol_Id]);
 
@@ -40,22 +40,22 @@ export const BuscarUser = async (req, res) => {
 
 export const ActualizarUser = async (req, res) => {
   const UserRol_Id = req.params.id;
-  const { first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active, date_joined } = req.body;
+  const { first_name, last_name, username, identificacion, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active } = req.body;
 
-  if (!first_name || !last_name || !username || !identificacion || !fecha_nac || !telefono || !email || !password || is_superuser === undefined || !fk_rol_id || is_staff === undefined || is_active === undefined || !date_joined) {
+  if (!first_name || !last_name || !username || !identificacion || !telefono || !email || !password || is_superuser === undefined || !fk_rol_id || is_staff === undefined || is_active === undefined) {
     return res.status(400).json({ message: "Todos los campos son obligatorios" });
   }
 
   try {
     const sql = `
       UPDATE "Users_usuario" 
-      SET first_name = $1, last_name = $2, username = $3, identificacion = $4, fecha_nac = $5, telefono = $6, email = $7, password = $8, 
-          is_superuser = $9, fk_rol_id = $10, is_staff = $11, is_active = $12, date_joined = $13
-      WHERE id = $14
+      SET first_name = $1, last_name = $2, username = $3, identificacion = $4, telefono = $5, email = $6, password = $7, 
+          is_superuser = $8, fk_rol_id = $9, is_staff = $10, is_active = $11
+      WHERE id = $12
       RETURNING *;
     `;
 
-    const response = await client.query(sql, [first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active, date_joined, UserRol_Id]);
+    const response = await client.query(sql, [first_name, last_name, username, identificacion, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active, UserRol_Id]);
 
     return response.rows.length > 0
       ? res.status(200).json({ message: "Usuario actualizado exitosamente", data: response.rows[0] })
@@ -69,19 +69,19 @@ export const ActualizarUser = async (req, res) => {
 
 export const RegistrarUser = async (req, res) => {
   try {
-    const { first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active, date_joined } = req.body;
+    const { first_name, last_name, username, identificacion, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active } = req.body;
 
-    if (!first_name || !last_name || !username || !identificacion || !fecha_nac || !telefono || !email || !password || is_superuser === undefined || !fk_rol_id || is_staff === undefined || is_active === undefined || !date_joined) {
+    if (!first_name || !last_name || !username || !identificacion || !telefono || !email || !password || is_superuser === undefined || !fk_rol_id || is_staff === undefined || is_active === undefined) {
       return res.status(400).json({ message: "Todos los campos son obligatorios" });
     }
 
     const sql = `
-      INSERT INTO "Users_usuario" (first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active, date_joined) 
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+      INSERT INTO "Users_usuario" (first_name, last_name, username, identificacion, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active) 
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
       RETURNING *;
     `;
 
-    const response = await client.query(sql, [first_name, last_name, username, identificacion, fecha_nac, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active, date_joined]);
+    const response = await client.query(sql, [first_name, last_name, username, identificacion, telefono, email, password, is_superuser, fk_rol_id, is_staff, is_active]);
 
     return res.status(201).json({ message: "Usuario registrado exitosamente", data: response.rows[0] });
 

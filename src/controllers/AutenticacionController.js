@@ -37,15 +37,7 @@ export const ValidarToken = (req, resp, next) => {
       } else {
         console.log('Token válido:', decoded);
   
-        // Responder a Postman con el resultado de la validación
-        return resp.status(200).json({
-          message: 'El token es válido',
-          decoded: decoded,
-        });
-  
-        // Si deseas continuar con otras rutas, utiliza next()
-        // y elimina el return anterior.
-        // next();
+         next();
       }
     });
   };

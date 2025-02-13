@@ -3,13 +3,14 @@ import { ListarTrazSemillero, RegistrarTrazSemillero } from '../controllers/Traz
 import {ActualizarTrazSemillero} from '../controllers/Trazabilidad_semilleroController.js';
 import { BuscarTrazSemillero } from '../controllers/Trazabilidad_semilleroController.js';
 import { EliminarTrazSemillero } from '../controllers/Trazabilidad_semilleroController.js';
+import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
-router.get('/TrazSemillero', ListarTrazSemillero);
-router.get('/TrazSemillero/:id', BuscarTrazSemillero);
-router.put('/TrazSemillero/:id', ActualizarTrazSemillero)
-router.post('/TrazSemillero', RegistrarTrazSemillero)
-router.delete('/TrazSemillero/:id', EliminarTrazSemillero);
+router.get('/TrazSemillero',ValidarToken, ListarTrazSemillero);
+router.get('/TrazSemillero/:id',ValidarToken, BuscarTrazSemillero);
+router.put('/TrazSemillero/:id',ValidarToken, ActualizarTrazSemillero)
+router.post('/TrazSemillero',ValidarToken, RegistrarTrazSemillero)
+router.delete('/TrazSemillero/:id',ValidarToken, EliminarTrazSemillero);
 
 
 export default router;
