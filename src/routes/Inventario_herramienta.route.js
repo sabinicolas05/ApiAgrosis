@@ -7,10 +7,10 @@ import { ValidarToken } from '../controllers/AutenticacionController.js';
 
 const router = express.Router();
 router.get('/InventarioHerramienta',ValidarToken, ListarInventarioHerramienta );
-router.get('/InventarioHerramienta/:id', BuscarInventarioHerramienta);
-router.put('/InventarioHerramienta/:id', ActualizarInventarioHerramienta)
-router.post('/InventarioHerramienta', RegistrarInventarioHerramienta)
-router.delete('/InventarioHerramienta/:id', EliminarInventarioHerramienta);
+router.get('/InventarioHerramienta/:id',ValidarToken, BuscarInventarioHerramienta);
+router.put('/InventarioHerramienta/:id',ValidarToken, ActualizarInventarioHerramienta)
+router.post('/InventarioHerramienta',ValidarToken, RegistrarInventarioHerramienta)
+router.delete('/InventarioHerramienta/:id',ValidarToken, EliminarInventarioHerramienta);
 
 
 export default router;
